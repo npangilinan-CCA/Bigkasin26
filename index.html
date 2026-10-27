@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tindahan ning Kultura</title>
+<title>Tindahan ning Aling Esmer</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;overflow-x:hidden;font-family:Georgia,"Trebuchet MS",serif;color:#3b2412;background:repeating-linear-gradient(0deg,transparent 0 58px,rgba(120,90,50,.13) 58px 60px),repeating-linear-gradient(90deg,transparent 0 98px,rgba(120,90,50,.1) 98px 100px),#f4ead2;display:flex;flex-direction:column;align-items:center;text-align:center}
@@ -14,45 +14,43 @@ body{margin:0;min-height:100vh;overflow-x:hidden;font-family:Georgia,"Trebuchet 
 .board small{letter-spacing:3px;font-size:.85rem}
 .plaque{background:#f7f0dc;border:3px solid #e2d6b2;border-radius:6px;color:#2c2a26;margin-top:6px;padding:8px 12px}
 .plaque h1{margin:0;font-size:clamp(1.5rem,6.5vw,2.8rem)}
-.plaque p{margin:2px 0 0;font-size:clamp(.85rem,2.8vw,1.1rem)}
 .awning{height:42px;margin-top:16px;border-radius:6px 6px 14px 14px;border-bottom:6px solid #7a0a1c;background:repeating-linear-gradient(90deg,#c8102e 0 28px,#fff6d6 28px 56px,#1f8a8a 56px 84px,#fff6d6 84px 112px)}
 .hang{position:relative;z-index:2;display:flex;justify-content:space-around;align-items:flex-start;height:76px;padding:0 4%;margin-bottom:-34px}
 .sachet{position:relative;margin-top:18px;width:clamp(22px,5vw,34px);height:clamp(36px,8vw,52px);background:var(--c);border-radius:3px 3px 8px 8px;box-shadow:inset 0 0 0 3px rgba(255,255,255,.55);transform-origin:50% -18px;animation:sway 3s ease-in-out infinite alternate}
 .sachet::before{content:"";position:absolute;left:50%;top:-18px;width:2px;height:18px;background:#5b3a1a}
 .ban{margin-top:4px;font-size:clamp(1.6rem,5vw,2.4rem);transform-origin:top;animation:sway 3.4s ease-in-out infinite alternate}
 @keyframes sway{from{transform:rotate(-5deg)}to{transform:rotate(5deg)}}
-.win{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;background:#f5c96a;border:6px solid #e9b04a;border-radius:8px;padding:40px 8px 8px;margin:0 auto 38px;width:min(780px,96%)}
+.win{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;background:#f5c96a;border:6px solid #e9b04a;border-radius:8px;padding:40px 8px 8px;margin:0 auto 22px;width:min(780px,96%)}
 .pane{position:relative;min-height:clamp(96px,20vw,150px);background:#4a3020;border-radius:4px;display:grid;grid-template-columns:repeat(3,1fr);place-items:center;font-size:clamp(1.2rem,4.6vw,2.2rem)}
 .pane::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(40,25,10,.55) 0 2px,transparent 2px 14px),repeating-linear-gradient(90deg,rgba(40,25,10,.55) 0 2px,transparent 2px 14px)}
-.utang{position:absolute;left:50%;bottom:-24px;transform:translateX(-50%) rotate(-2deg);background:#fffaf0;border:3px solid #d8c9a6;border-radius:6px;padding:4px 14px;font-weight:bold;font-size:clamp(.9rem,3.4vw,1.3rem);box-shadow:0 3px 0 rgba(0,0,0,.2);white-space:nowrap;z-index:3}
+.utang{display:inline-block;margin-top:8px;background:#fffaf0;border:3px solid #c8102e;border-radius:6px;padding:4px 16px;color:#c8102e;font-weight:bold;font-size:clamp(1rem,3.6vw,1.4rem);transform:rotate(-1.5deg);box-shadow:0 3px 0 rgba(0,0,0,.2)}
 .dot{position:absolute;left:-10px;z-index:3;width:clamp(50px,11vw,68px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:bold;font-size:.75rem;line-height:1.1;border:3px solid #fff6d6;box-shadow:0 3px 0 rgba(0,0,0,.25)}
 .dot.a{top:44px;background:#1d6fa5}.dot.b{top:calc(50px + clamp(54px,12vw,72px));background:#d99a1b}
-main{width:100%;padding:8px 8px 0}
+main{flex:1;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px 8px}
 .bubble{position:relative;display:inline-block;background:#6b6f73;color:#fff;font-weight:bold;border-radius:18px;padding:8px 20px;font-size:clamp(1rem,3.8vw,1.35rem);margin-bottom:18px}
 .bubble::after{content:"";position:absolute;left:50%;bottom:-10px;margin-left:-8px;border:8px solid transparent;border-top-color:#6b6f73;border-bottom:0}
-.scene{width:min(680px,94vw);margin:0 auto;perspective:1400px;transition:transform .25s}
+.scene{width:min(880px,96vw);margin:0 auto;perspective:1400px;transition:transform .25s}
 .scene:hover{transform:translateY(-5px) rotate(-.5deg)}
 .scene.deal{animation:deal .6s cubic-bezier(.2,.8,.3,1.25)}
 .card{display:grid;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.3,1.2,.4,1);cursor:pointer;border-radius:24px;outline-offset:6px}
 .card:focus-visible{outline:3px solid #0b57d0}
 .card.flipped{transform:rotateY(180deg)}
-.face{position:relative;grid-area:1/1;min-height:clamp(300px,52vw,380px);backface-visibility:hidden;-webkit-backface-visibility:hidden;border:5px solid #8a5a2b;border-radius:24px;box-shadow:0 9px 0 #5b3a1a,0 16px 22px rgba(0,0,0,.28);padding:34px 22px 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.face{position:relative;grid-area:1/1;min-height:clamp(340px,62vw,500px);backface-visibility:hidden;-webkit-backface-visibility:hidden;border:5px solid #8a5a2b;border-radius:24px;box-shadow:0 9px 0 #5b3a1a,0 16px 22px rgba(0,0,0,.28);padding:44px clamp(18px,4vw,48px) 28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
 .back{background:repeating-linear-gradient(45deg,#c8102e 0 22px,#fff6d6 22px 44px,#1f8a8a 44px 66px,#fff6d6 66px 88px);color:#fff}
-.back b{display:grid;place-items:center;width:clamp(90px,22vw,130px);aspect-ratio:1;border-radius:50%;background:#ffd23f;color:#7a0a1c;font-size:clamp(3.4rem,12vw,5.5rem);border:5px solid #7a0a1c;box-shadow:0 5px 0 rgba(0,0,0,.3)}
+.back b{display:grid;place-items:center;width:clamp(110px,26vw,170px);aspect-ratio:1;border-radius:50%;background:#ffd23f;color:#7a0a1c;font-size:clamp(4rem,14vw,7rem);border:5px solid #7a0a1c;box-shadow:0 5px 0 rgba(0,0,0,.3)}
 .back span{background:#7a0a1c;padding:6px 20px;border-radius:999px;font-weight:bold;letter-spacing:2px;font-size:clamp(1rem,3.6vw,1.4rem)}
 .front{transform:rotateY(180deg);background:#fffaf0;visibility:hidden;transition:visibility 0s .35s}
 .flipped .front{visibility:visible;transition-delay:0s}
-.price{position:absolute;top:12px;right:14px;background:#ffd23f;color:#7a0a1c;font-weight:bold;padding:2px 12px;border-radius:4px;transform:rotate(6deg);font-size:.95rem;border:2px dashed #7a0a1c}
 .cat{padding:7px 22px;border-radius:999px;font-weight:bold;letter-spacing:2px;font-size:clamp(.9rem,3.2vw,1.1rem);color:#fff;border:2px dashed #fff6d6}
 .cat.tt{background:#0b7a4b}.cat.tv{background:#b8460e}
-.q{font-size:clamp(1.4rem,5.4vw,2.3rem);font-weight:bold;line-height:1.3;overflow-wrap:anywhere}
-.a{display:none;background:#ffe9a8;border-left:6px solid #c8102e;border-radius:10px;padding:12px 16px;font-size:clamp(1.1rem,3.8vw,1.5rem);overflow-wrap:anywhere}
+.q{font-size:clamp(1.6rem,6vw,2.9rem);font-weight:bold;line-height:1.3;overflow-wrap:anywhere}
+.a{display:none;background:#ffe9a8;border-left:6px solid #c8102e;border-radius:10px;padding:12px 16px;font-size:clamp(1.2rem,4.2vw,1.9rem);overflow-wrap:anywhere}
 .a.show{display:block;animation:pop .45s cubic-bezier(.2,.8,.3,1.3)}
 .a small{display:block;font-size:.7rem;letter-spacing:1px;color:#7a0a1c;font-weight:bold}
 button{font:inherit;font-weight:bold;cursor:pointer;border-radius:12px;border:3px solid #3b2412}
 button:focus-visible{outline:3px solid #0b57d0;outline-offset:3px}
 #reveal{background:#fff6d6;color:#3b2412;padding:10px 22px;font-size:1.1rem}
-#shuffle{display:block;margin:30px auto 32px;width:min(440px,90vw);padding:16px;font-size:clamp(1.3rem,5vw,1.8rem);letter-spacing:3px;color:#fff6d6;background:#c8102e;box-shadow:0 7px 0 #7a0a1c}
+#shuffle{display:block;margin:34px auto 30px;width:min(520px,92vw);padding:16px;font-size:clamp(1.3rem,5vw,1.8rem);letter-spacing:3px;color:#fff6d6;background:#c8102e;box-shadow:0 7px 0 #7a0a1c}
 #shuffle:hover{filter:brightness(1.1)}
 #shuffle:active{transform:translateY(5px);box-shadow:0 2px 0 #7a0a1c}
 #shuffle.spin span{display:inline-block;animation:spin .5s}
@@ -62,26 +60,27 @@ button:focus-visible{outline:3px solid #0b57d0;outline-offset:3px}
 @keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:none;opacity:1}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+#music{position:fixed;top:10px;right:10px;z-index:10;padding:8px 14px;font-size:.95rem;background:#fff6d6;color:#3b2412;box-shadow:0 4px 0 #5b3a1a}
+#music[aria-pressed="true"]{background:#ffd23f}
 </style>
 </head>
 <body>
+<button id="music" type="button" aria-pressed="false" aria-label="Toggle game music">&#127925; Music: Off</button>
 <header class="store">
   <div class="roof" aria-hidden="true"></div>
-  <div class="board"><small>MAMALEN TAMU!</small><div class="plaque"><h1>Tindahan ning Kultura</h1><p>Kapampangan Sari-Sari Store &middot; Explore the culture of Pampanga</p></div></div>
+  <div class="board"><small>MAMALEN TAMU!</small><div class="plaque"><h1>Tindahan ning Aling Esmer</h1><div class="utang">Hoy Bawal Utang!</div></div></div>
   <div class="awning" aria-hidden="true"></div>
   <div class="hang" id="hang" aria-hidden="true"></div>
   <div class="win" id="win" aria-hidden="true">
-    <div class="dot a">LOAD<br>DITO</div><div class="dot b">&#8369;5<br>LANG</div>
-    <div class="utang">BAWAL UTANG!</div>
+    <div class="dot a">LOAD<br>DITO</div><div class="dot b">&#8369;10<br>LANG</div>
   </div>
 </header>
 <main>
-  <div class="bubble" id="bubble">Pabili poooo~</div>
+  <div class="bubble" id="bubble">Salwana pu!</div>
   <div class="scene" id="scene">
     <div class="card" id="card" tabindex="0" role="button" aria-label="Flip the card">
       <div class="face back"><b>?</b><span>TAP TO FLIP!</span></div>
       <div class="face front" aria-live="polite">
-        <div class="price">&#8369;5 lang!</div>
         <div class="cat tt" id="cat"></div>
         <div class="q" id="q"></div>
         <button id="reveal" type="button">Reveal Answer</button>
@@ -164,7 +163,13 @@ const TRIVIA=[
 ["What is the song Atin cu pung singsing about?","A woman who has a ring and lost it."],
 ["In what barangay are the famous Good Friday crucifixion rites held in San Fernando?","Cutud."],
 ["What Pampanga town celebrates the Duman Festival?","Santa Rita."],
-["What festival in Angeles City combines music and street performances?","Tigtigan Terakan"]
+["What festival in Angeles City combines music and street performances?","Tigtigan Terakan"],
+["Which town in Pampanga is known for the Kuraldal Festival honoring Saint Lucy?","Sasmuan"],
+["Who is the ancient sun god associated with war, death, and creation in Kapampangan mythology?","Aring Sinukwan"],
+["Which festival celebrates Kapampangan heritage through cultural performances, music, dances, and costumes?","Sinukwan Festival"],
+["In what year did Mount Pinatubo erupt?","1991"],
+["Which Kapampangan deity or legendary figure is associated with the Pampanga River?","Apung Iru"],
+["Which famous mountain in Pampanga is associated with Aring Sinukwan in Kapampangan oral tradition?","Mount Arayat"]
 ];
 const CATS=[
  {label:"TONGUE TWISTER",cls:"tt",items:TWISTERS,ans:"TRANSLATION",btn:"Reveal Translation"},
@@ -179,7 +184,7 @@ COLORS.forEach((c,i)=>{
 ["\u{1F36B}\u{1F36C}\u{1F96B}\u{1F36A}\u{1F95C}\u{1F9C3}","\u{1F37E}\u{1F964}\u{1F9C3}\u{1F96B}\u{1F35C}\u{1F36D}","\u{1F37F}\u{1F954}\u{1F358}\u{1F359}\u{1F95A}\u{1F9C2}"].forEach(t=>{
   const p=document.createElement("div");p.className="pane";p.innerHTML=Array.from(t).map(e=>"<span>"+e+"</span>").join("");$("win").insertBefore(p,$("win").querySelector(".utang"));
 });
-const LINES=["Pabili poooo~","Magkano po?","Ate, isa nga po!","Pabili ng kultura!","Tatlong potchi nga po~","Ano ang laro ngayon?"];
+const LINES=["Salwana pu!","Salwana pu, mamakal ku pu!","Aling Esmer, salwana pu!","Magkanu ya ini, pu?","Bakal ku pu ini!"];
 let last=null,timer=0;
 function load(c,i){
   const it=c.items[i];
@@ -203,12 +208,56 @@ function shuffle(){
   $("bubble").textContent=LINES[Math.floor(Math.random()*LINES.length)];
   if(was)timer=setTimeout(()=>load(c,i),350);else load(c,i);
 }
-function reveal(){$("a").classList.add("show");$("reveal").hidden=true}
-function flip(){const card=$("card");if(card.classList.contains("flipped"))reveal();else card.classList.add("flipped")}
-$("shuffle").addEventListener("click",()=>{const b=$("shuffle");b.classList.remove("spin");void b.offsetWidth;b.classList.add("spin");shuffle()});
+function reveal(){$("a").classList.add("show");$("reveal").hidden=true;sfx("reveal")}
+function flip(){const card=$("card");if(card.classList.contains("flipped"))reveal();else{card.classList.add("flipped");sfx("flip")}}
+$("shuffle").addEventListener("click",()=>{const b=$("shuffle");b.classList.remove("spin");void b.offsetWidth;b.classList.add("spin");sfx("shuffle");shuffle()});
 $("reveal").addEventListener("click",e=>{e.stopPropagation();reveal()});
 $("card").addEventListener("click",flip);
 $("card").addEventListener("keydown",e=>{if(e.target===$("card")&&(e.key==="Enter"||e.key===" ")){e.preventDefault();flip()}});
+// Game music: chiptune ("gamified") arrangement of Atin Cu Pung Singsing, transcribed from the supplied sheet (F major, 3/4, 119 BPM). Web Audio, no audio files.
+// SONG = [MIDI note, length in eighth-notes]. Starts with the 2-eighth pick-up, ends on the half-note F, then loops.
+const SONG=[[69,1],[70,1],
+[72,2],[72,2],[69,2],  [65,4],[69,1],[70,1],  [72,2],[70,2],[69,2],  [67,4],[67,1],[69,1],  [70,2],[69,2],[70,2],
+[67,4],[67,1],[69,1],  [70,2],[69,2],[67,2],  [65,4],[69,1],[67,1],  [65,2],[65,2],[67,2],  [69,4],[69,1],[69,1],
+[69,2],[70,2],[72,2],  [74,4],[74,1],[74,1],  [74,2],[70,2],[74,2],  [72,4],[67,1],[69,1],  [70,2],[69,2],[67,2],  [65,4]];
+const PROG="FFFCCCCFFFFBBFCF"; // chord per measure, from the sheet
+const CHORD={F:[41,[57,60]],C:[48,[55,64]],B:[46,[58,62]]};
+const hz=m=>440*Math.pow(2,(m-69)/12);
+const STEP=60/119/2;
+const LEAD=[];let TOTAL=0;
+SONG.forEach(([m,d])=>{LEAD[TOTAL]=[m,d];TOTAL+=d});
+let ac,master,musicOn=false,step=0,nextT=0,tid;
+function tone(f,t,d,type,v){const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.01);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.02)}
+function sched(){while(nextT<ac.currentTime+.3){
+  const k=step%TOTAL,L=LEAD[k];
+  if(L){const d=Math.max(.12,L[1]*STEP*.9);tone(hz(L[0]),nextT,d,"square",.07);tone(hz(L[0]+12),nextT,d*.5,"square",.014)}
+  if(k>=2){const m=Math.floor((k-2)/6),o=(k-2)%6,c=CHORD[PROG[m]];
+    if(o===0)tone(hz(c[0]),nextT,.5,"triangle",.28);
+    else if(o===2||o===4)tone(hz(c[1][o/2-1]),nextT,.2,"square",.025)}
+  if(k%2===0)tone(2200,nextT,.03,"square",.02);
+  nextT+=STEP;step++}}
+// Interactive sound effects (Web Audio, played on click)
+function audio(){
+  if(!ac){const A=window.AudioContext||window.webkitAudioContext;if(!A)return false;ac=new A();master=ac.createGain();master.gain.value=.5;master.connect(ac.destination)}
+  if(ac.state==="suspended")ac.resume();
+  return true;
+}
+function noise(t,d,v,f1,f2){const n=Math.floor(ac.sampleRate*d),buf=ac.createBuffer(1,n,ac.sampleRate),a=buf.getChannelData(0);for(let i=0;i<n;i++)a[i]=Math.random()*2-1;const s=ac.createBufferSource(),f=ac.createBiquadFilter(),g=ac.createGain();s.buffer=buf;f.type="bandpass";f.frequency.setValueAtTime(f1,t);f.frequency.exponentialRampToValueAtTime(f2,t+d);g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+d);s.connect(f);f.connect(g);g.connect(master);s.start(t)}
+function sweep(f1,f2,t,d,type,v){const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.setValueAtTime(f1,t);o.frequency.exponentialRampToValueAtTime(f2,t+d);g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.02)}
+const SFX={
+  flip(t){noise(t,.4,.35,300,3500);sweep(300,900,t,.25,"triangle",.12);tone(660,t+.28,.12,"triangle",.2);tone(990,t+.36,.25,"triangle",.2)},
+  reveal(t){[523.25,659.25,783.99,1046.5].forEach((f,i)=>tone(f,t+i*.07,.25,"square",.08));tone(2093,t+.3,.45,"sine",.12);noise(t+.28,.3,.08,6000,9000)},
+  shuffle(t){for(let i=0;i<7;i++)noise(t+i*.05,.04,.3,1800+i*250,2600+i*250);sweep(220,1100,t,.38,"sawtooth",.05);tone(880,t+.36,.12,"square",.07);tone(1175,t+.44,.2,"square",.07)}
+};
+function sfx(n){if(audio())SFX[n](ac.currentTime)}
+function toggleMusic(){
+  const b=$("music");
+  if(!audio())return;
+  if(musicOn){clearInterval(tid);musicOn=false}
+  else{ac.resume();nextT=ac.currentTime+.05;tid=setInterval(sched,60);musicOn=true}
+  b.setAttribute("aria-pressed",musicOn);b.textContent="\u{1F3B5} Music: "+(musicOn?"On":"Off");
+}
+$("music").addEventListener("click",toggleMusic);
 shuffle();
 </script>
 </body>
